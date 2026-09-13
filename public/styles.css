@@ -1,0 +1,285 @@
+
+/* =========================
+   Global
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 32px;
+  color: #111827;
+}
+
+/* =========================
+   Message Container
+========================= */
+
+.messages-container {
+  max-width: 750px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* =========================
+   Message Card
+========================= */
+
+.message-card {
+  background: white;
+  padding: 22px 25px;
+
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.message-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/*Message Detail*/
+
+.message-detail {
+  max-width: 700px;
+  margin: 0 auto;
+
+  background: white;
+  padding: 30px;
+
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.message-detail h1 {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.message-detail h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.message-detail p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.message-detail small {
+  color: #9ca3af;
+}
+
+.message-detail a {
+  display: inline-block;
+  margin-top: 20px;
+
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.message-detail a:hover {
+  text-decoration: underline;
+}
+
+/* Username */
+
+.message-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 18px;
+  color: #2563eb;
+}
+
+/* Message */
+
+.message-card p {
+  margin: 0 0 15px;
+
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Date */
+
+.message-card small {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* =========================
+   Open Button
+========================= */
+
+.message-card a {
+  display: inline-block;
+
+  margin-top: 15px;
+  padding: 8px 14px;
+
+  background: #2563eb;
+  color: white;
+
+  text-decoration: none;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: background 0.2s ease;
+}
+
+.message-card a:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   Form
+========================= */
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+
+  background: white;
+  padding: 30px;
+
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-weight: 600;
+  color: #374151;
+}
+
+input {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================
+   Submit Button
+========================= */
+
+button {
+  width: 100%;
+
+  padding: 11px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   Message Detail Page
+========================= */
+
+body > h3,
+body > p,
+body > small,
+body > br,
+body > a {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body > h3 {
+  font-size: 22px;
+  color: #2563eb;
+}
+
+body > p {
+  background: white;
+  padding: 25px;
+
+  border-radius: 10px;
+
+  line-height: 1.7;
+}
+
+body > a {
+  display: block;
+
+  width: fit-content;
+
+  margin-top: 20px;
+
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+body > a:hover {
+  text-decoration: underline;
+}
+
