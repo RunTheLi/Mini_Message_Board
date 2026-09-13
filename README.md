@@ -1,7 +1,5 @@
 # Mini_Message_Board
 
-# Mini_Message_Board
-
 A simple message board web application built with Node.js, Express, and EJS. Users can view messages, submit new messages, and open individual messages to view their details.
 
 This project was built as part of my learning journey with The Odin Project, focusing on Express routing, server-side rendering with EJS, handling form submissions, and serving static assets.
