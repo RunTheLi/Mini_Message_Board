@@ -1,22 +1,13 @@
 // routes/indexRouter.js
 const { Router } = require("express");
+const db = require("../db/queries");
 
 const indexRouter = Router();
 
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date()
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date()
-  }
-];
 
-indexRouter.get("/", (req, res) => {
+indexRouter.get("/", async (req, res) => {
+  const messages = await db.getAllMessages();
+
   res.render("index", {
     title: "Mini Messageboard",
     messages: messages
@@ -27,10 +18,8 @@ indexRouter.get("/new", (req, res) => {
   res.render("form", { title: "New Message Form" });
 });
 
-indexRouter.get("/messages/:id", (req, res) => {
-  const messageId = Number(req.params.id);
-
-  const message = messages[messageId];
+indexRouter.get("/messages/:id", async (req, res) => {
+  const message = await db.getMessage(req.params.id);
 
   res.render("message", {
     message: message
@@ -38,17 +27,20 @@ indexRouter.get("/messages/:id", (req, res) => {
 });
 
 
-indexRouter.post("/new", (req, res) => {
+indexRouter.post("/new", async (req, res) => {
   const { user, text } = req.body;
 
-  messages.push({
-    text: text,
-    user: user,
-    added: new Date()
-  });
+  if (!user?.trim() || !text?.trim()) {
+    return res.status(400).send("Username and message are required.");
+  }
+
+  if (user.trim().length > 255 || text.trim().length > 255) {
+    return res.status(400).send("Username and message must be 255 characters or less.");
+  }
+
+  await db.insertMessage(user, text);
 
   res.redirect("/");
-  
 });
 
 module.exports = indexRouter;
